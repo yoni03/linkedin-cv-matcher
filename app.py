@@ -691,7 +691,9 @@ body, .gradio-container {
 """
 
 config = load_config()
-init_query = config.get('query', DEFAULT_QUERY)
+init_query = config.get('query')
+if not init_query:
+    init_query = DEFAULT_QUERY
 init_key1 = config.get('key1', '')
 init_key2 = config.get('key2', '')
 
