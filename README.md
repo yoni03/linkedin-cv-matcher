@@ -12,7 +12,15 @@ An autonomous, entirely local, and highly privacy-focused application that autom
 
 ## Installation
 
-### Mac Users
+The application is pre-packaged for both **Mac** and **Windows** so you don't need to install Python or use the command line to run it!
+
+1. Go to the [Releases](https://github.com/yoni03/linkedin-cv-matcher/releases/latest) page.
+2. Download the appropriate file for your operating system:
+   - **Mac:** Download `LinkedIn_CV_Matcher_Mac.zip`, extract it, and launch the `LinkedIn CV Matcher.app` application. *(Note: You may need to Right Click -> Open on the first launch to bypass macOS security warnings).*
+   - **Windows:** Download `LinkedIn_CV_Matcher_Windows.zip`, extract the folder, and run the `LinkedIn_CV_Matcher.exe` file.
+
+### Running from Source (For Developers)
+If you prefer to run the application directly from the Python source code:
 1. Ensure you have Python 3.11+ installed.
 2. Clone this repository.
 3. Install the dependencies:
@@ -23,12 +31,6 @@ An autonomous, entirely local, and highly privacy-focused application that autom
    ```bash
    python app.py
    ```
-
-### Windows Users
-A pre-compiled `.exe` file is automatically built via GitHub Actions and available in the **Releases** tab.
-1. Go to the [Releases](https://github.com/yourusername/linkedin-cv-matcher/releases) page.
-2. Download the latest `LinkedIn_CV_Matcher_Windows.zip and LinkedIn_CV_Matcher_Mac.zip`.
-3. Extract the folder and run `LinkedIn_CV_Matcher.exe`.
 
 ## Usage & Configuration
 Your settings (CV path, default queries, and optional Gemini API keys) are safely and persistently stored in `~/.linkedin_matcher_config.json` after your first run. They are **never** tracked by Git.
