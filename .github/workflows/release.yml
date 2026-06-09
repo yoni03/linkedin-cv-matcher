@@ -31,7 +31,8 @@ jobs:
         shell: bash
         run: |
           SAFEHTTPX_DIR=$(python -c "import safehttpx, os; print(os.path.dirname(safehttpx.__file__))")
-          pyinstaller app.py --name "LinkedIn_CV_Matcher" --onedir --noconfirm --collect-all gradio --add-data "$SAFEHTTPX_DIR;safehttpx"
+          GROOVY_DIR=$(python -c "import groovy, os; print(os.path.dirname(groovy.__file__))")
+          pyinstaller app.py --name "LinkedIn_CV_Matcher" --onedir --noconfirm --collect-all gradio --add-data "$SAFEHTTPX_DIR;safehttpx" --add-data "$GROOVY_DIR;groovy"
 
       - name: Zip the Build Directory
         run: |
@@ -63,7 +64,8 @@ jobs:
       - name: Build macOS App with PyInstaller
         run: |
           SAFEHTTPX_DIR=$(python -c "import safehttpx, os; print(os.path.dirname(safehttpx.__file__))")
-          pyinstaller app.py --name "LinkedIn CV Matcher" --windowed --noconfirm --collect-all gradio --add-data "$SAFEHTTPX_DIR:safehttpx"
+          GROOVY_DIR=$(python -c "import groovy, os; print(os.path.dirname(groovy.__file__))")
+          pyinstaller app.py --name "LinkedIn CV Matcher" --windowed --noconfirm --collect-all gradio --add-data "$SAFEHTTPX_DIR:safehttpx" --add-data "$GROOVY_DIR:groovy"
 
       - name: Zip the App Bundle
         run: |
