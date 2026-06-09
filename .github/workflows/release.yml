@@ -28,8 +28,10 @@ jobs:
           pip install pyinstaller
 
       - name: Build EXE with PyInstaller
+        shell: bash
         run: |
-          pyinstaller app.py --name "LinkedIn_CV_Matcher" --onedir --noconfirm --collect-all gradio
+          SAFEHTTPX_DIR=$(python -c "import safehttpx, os; print(os.path.dirname(safehttpx.__file__))")
+          pyinstaller app.py --name "LinkedIn_CV_Matcher" --onedir --noconfirm --collect-all gradio --add-data "$SAFEHTTPX_DIR;safehttpx"
 
       - name: Zip the Build Directory
         run: |
@@ -60,7 +62,8 @@ jobs:
 
       - name: Build macOS App with PyInstaller
         run: |
-          pyinstaller app.py --name "LinkedIn CV Matcher" --windowed --noconfirm --collect-all gradio
+          SAFEHTTPX_DIR=$(python -c "import safehttpx, os; print(os.path.dirname(safehttpx.__file__))")
+          pyinstaller app.py --name "LinkedIn CV Matcher" --windowed --noconfirm --collect-all gradio --add-data "$SAFEHTTPX_DIR:safehttpx"
 
       - name: Zip the App Bundle
         run: |
