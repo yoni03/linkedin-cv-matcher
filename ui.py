@@ -14,7 +14,7 @@ from linkedin_cv_matcher import (
 )
 
 # Default values
-DEFAULT_CV_PATH = os.path.expanduser("~/Documents/CV_YoniH_070526.pdf")
+DEFAULT_CV_PATH = os.path.expanduser("")
 DEFAULT_QUERY = '"CEO" OR "Chief Executive Officer" OR "VP" OR "Vice President" OR "SVP" OR "Director" OR "Head of" OR "Group manager" OR "Group lead" OR "group leader" OR ("system" AND ("leader" OR "lead" OR "manager"))'
 DEFAULT_KEY_1 = ""
 DEFAULT_KEY_2 = ""
