@@ -16,8 +16,8 @@ from linkedin_cv_matcher import (
 # Default values
 DEFAULT_CV_PATH = os.path.expanduser("~/Documents/CV_YoniH_070526.pdf")
 DEFAULT_QUERY = '"CEO" OR "Chief Executive Officer" OR "VP" OR "Vice President" OR "SVP" OR "Director" OR "Head of" OR "Group manager" OR "Group lead" OR "group leader" OR ("system" AND ("leader" OR "lead" OR "manager"))'
-DEFAULT_KEY_1 = "AQ.Ab8RN6JIxClCEYfDaeKeyskC7vYL9p5WURY4i9oe-jz9iHcuFw"
-DEFAULT_KEY_2 = "AQ.Ab8RN6J31cJvwh1fVEKh5x77UaezglF_I2nh1nyPrqEDT-UeGQ"
+DEFAULT_KEY_1 = ""
+DEFAULT_KEY_2 = ""
 
 # ── Shared run-control state ──────────────────────────────────────────────
 _stop = threading.Event()
