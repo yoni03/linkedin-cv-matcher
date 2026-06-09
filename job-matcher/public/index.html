@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Job Matcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1>AI Job Matcher</h1>
+            <p>Upload your CV and paste a LinkedIn search URL to find the perfect fit.</p>
+        </header>
+
+        <section class="card form-card">
+            <form id="matchForm">
+                <div class="form-group">
+                    <label for="urlInput">LinkedIn Search URL</label>
+                    <input type="url" id="urlInput" name="url" placeholder="https://www.linkedin.com/jobs/search/?..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cvInput">Your CV (PDF)</label>
+                    <div class="file-drop-area">
+                        <span class="file-msg">Choose a PDF or drag it here</span>
+                        <input class="file-input" type="file" id="cvInput" name="cv" accept=".pdf" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn primary-btn" id="submitBtn">
+                    <span>Analyze Matches</span>
+                    <div class="spinner"></div>
+                </button>
+            </form>
+        </section>
+
+        <section id="resultsSection" class="results-container hidden">
+            <h2>Your Matches</h2>
+            <div id="jobsList" class="jobs-list"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
