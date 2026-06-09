@@ -6,6 +6,9 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build-windows:
     runs-on: windows-latest
@@ -69,3 +72,30 @@ jobs:
         with:
           name: LinkedIn_CV_Matcher_Mac
           path: LinkedIn_CV_Matcher_Mac.zip
+
+  publish-release:
+    needs: [build-windows, build-mac]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Windows Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: LinkedIn_CV_Matcher_Windows
+          path: .
+
+      - name: Download Mac Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: LinkedIn_CV_Matcher_Mac
+          path: .
+
+      - name: Create or Update Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest Release
+          files: |
+            LinkedIn_CV_Matcher_Windows.zip
+            LinkedIn_CV_Matcher_Mac.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
