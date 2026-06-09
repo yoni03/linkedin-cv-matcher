@@ -27,7 +27,7 @@ An autonomous, entirely local, and highly privacy-focused application that autom
 ### Windows Users
 A pre-compiled `.exe` file is automatically built via GitHub Actions and available in the **Releases** tab.
 1. Go to the [Releases](https://github.com/yourusername/linkedin-cv-matcher/releases) page.
-2. Download the latest `LinkedIn_CV_Matcher_Windows.zip`.
+2. Download the latest `LinkedIn_CV_Matcher_Windows.zip and LinkedIn_CV_Matcher_Mac.zip`.
 3. Extract the folder and run `LinkedIn_CV_Matcher.exe`.
 
 ## Usage & Configuration
